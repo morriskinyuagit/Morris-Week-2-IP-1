@@ -46,15 +46,19 @@
         <hr>
         <br>
         
-          <div class="row">
+        <div class="row">
+          <% if (Array.isArray(images)) { %>
             <% images.forEach(function(image){ %>
-
               <div class="column">
-
-                <a href="/image/<%= image._id %>"> <img src="<%= image.path %>" class="responsive-img" alt="<%= image.name %>"> </a>
+                <a href="/image/<%= image._id %>"><img src="<%= image.path %>" class="responsive-img" alt="<%= image.name %>"></a>
               </div>
-            <% }); %>  
-          </div>
+            <% }); %>
+          <% } else { %>
+            <!-- Handle the case where 'images' is not an array or is undefined -->
+            <p>No images available.</p>
+          <% } %>
+        </div>
+        
             
               
             
