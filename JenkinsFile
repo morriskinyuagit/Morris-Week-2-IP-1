@@ -41,4 +41,16 @@ pipeline {
       }
     }
   }
+  post {
+    failure {
+      emailext(
+        subject: "Moringa IP 1 Pipeline Failure: ${currentBuild.fullDisplayName}",
+        body: "The Moringa IP 1 Jenkins pipeline ${currentBuild.fullDisplayName} has failed. Kinldy check the build log for more details.",
+        to: "morris.kinyua.git@gmail.com",
+        cc: "morrismurithikinyua@gmail.com",
+        cc: "morris.murithi@student.moringaschool.com",
+        attachLog: true
+      )
+    }
+  }
 }
