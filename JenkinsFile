@@ -1,19 +1,11 @@
 pipeline {
   agent any
-
   stages {
     stage('Clone Repo') {
       steps {
         echo 'Cloning the repository'
         git 'https://github.com/morriskinyuagit/Morris-Week-2-IP-1.git'
       }
-    }
-    stage('Install Dependencies') {
-      steps {
-        echo 'Installing dependencies'
-        sh 'npm install'
-      }
-    }
     stage('Run Tests') {
       steps {
         echo 'Running tests'
