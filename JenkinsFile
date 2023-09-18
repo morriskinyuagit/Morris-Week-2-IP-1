@@ -6,6 +6,7 @@ pipeline {
         echo 'Cloning the repository'
         git 'https://github.com/morriskinyuagit/Morris-Week-2-IP-1.git'
       }
+    }
     stage('Run Tests') {
       steps {
         echo 'Running tests'
